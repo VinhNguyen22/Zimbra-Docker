@@ -8,18 +8,9 @@ RANDOMHAM=$(date +%s|sha256sum|base64|head -c 10)
 RANDOMSPAM=$(date +%s|sha256sum|base64|head -c 10)
 RANDOMVIRUS=$(date +%s|sha256sum|base64|head -c 10)
 
-## Installing the DNS Server ##
-echo "Configuring DNS Server"
-mv /etc/dnsmasq.conf /etc/dnsmasq.conf.old
-cat <<EOF >>/etc/dnsmasq.conf
-server=8.8.8.8
-listen-address=127.0.0.1
-domain=$DOMAIN
-mx-host=$DOMAIN,$HOSTNAME.$DOMAIN,0
-address=/$HOSTNAME.$DOMAIN/$CONTAINERIP
-user=root
+cat <<EOF >>/etc/resolv.conf
+nameserver=172.29.139.30
 EOF
-sudo service dnsmasq restart
 
 ##Creating the Zimbra Collaboration Config File ##
 touch /opt/zimbra-install/installZimbraScript
