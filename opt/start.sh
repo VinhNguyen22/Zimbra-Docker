@@ -8,6 +8,10 @@ RANDOMHAM=$(date +%s|sha256sum|base64|head -c 10)
 RANDOMSPAM=$(date +%s|sha256sum|base64|head -c 10)
 RANDOMVIRUS=$(date +%s|sha256sum|base64|head -c 10)
 
+## add DNS
+cat <<EOF >>/etc/resolv.conf
+nameserver=172.29.139.30
+EOF
 ##Install the Zimbra Collaboration ##
 
 echo "Downloading Zimbra Collaboration 8.8.15"
