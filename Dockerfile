@@ -1,6 +1,5 @@
 FROM ubuntu:18.04
 
-RUN echo "resolvconf resolvconf/linkify-resolvconf boolean false" | debconf-set-selections
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -y install \
   wget \
   dialog \
