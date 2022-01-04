@@ -130,8 +130,8 @@ echo "Update package cache"
 apt update
 echo "Installing Zimbra Collaboration just the Software"
 cd /opt/zimbra-install/zcs-* && ./install.sh -s < /opt/zimbra-install/installZimbra-keystrokes
-echo "Installing Zimbra Collaboration injecting the configuration"
-/opt/zimbra/libexec/zmsetup.pl -c /opt/zimbra-install/installZimbraScript
+##echo "Installing Zimbra Collaboration injecting the configuration"
+##/opt/zimbra/libexec/zmsetup.pl -c /opt/zimbra-install/installZimbraScript
 su - zimbra -c 'zmcontrol restart'
 echo "You can access now to your Zimbra Collaboration Server"
 if [[ $1 == "-d" ]]; then
