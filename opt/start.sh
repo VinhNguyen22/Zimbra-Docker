@@ -133,7 +133,6 @@ cd /opt/zimbra-install/zcs-* && ./install.sh -s < /opt/zimbra-install/installZim
 
 echo "Installing Zimbra Collaboration injecting the configuration"
 /opt/zimbra/libexec/zmsetup.pl -c /opt/zimbra-install/installZimbraScript
-
 su - zimbra -c 'zmcontrol restart'
 echo "You can access now to your Zimbra Collaboration Server"
 
